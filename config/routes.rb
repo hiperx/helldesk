@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  #get 'session/new'
+
+  #get 'session/create'
+
+  #get 'session/destroy'
+
+  controller :session do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+
   resources :users
   get 'static_content/help'
 
@@ -9,7 +21,7 @@ Rails.application.routes.draw do
   controller :static_content do
     get 'help' => :help
     get 'about' => :about
-    get 'statr' => :start
+    get 'start' => :start
     get 'index' => :start
   end
 

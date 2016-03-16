@@ -1,6 +1,6 @@
 module ApplicationHelper
   def provide_title(subtitle='')
-    hell= 'Helldesk' 
+    hell= 'Helldesk'
     unless @title.nil?
       subtitle=@title
     end
@@ -10,4 +10,13 @@ module ApplicationHelper
       hell + " | " + subtitle
     end
   end
+
+  def login_logout
+    unless @current_user.nil?
+      link_to "logout", :logout, :method => :delete
+    else
+      link_to "login", :login
+    end
+  end
+
 end
