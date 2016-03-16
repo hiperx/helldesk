@@ -13,7 +13,7 @@ module ApplicationHelper
 
   def login_logout
     unless @current_user.nil?
-      link_to "logout", :logout, :method => :delete
+      link_to "logout" + ' [' +user_name + ' ]', :logout, :method => :delete
     else
       link_to "login", :login
     end
@@ -35,6 +35,13 @@ module ApplicationHelper
     else
       "Missing"
     end
+  end
+
+  def user_name
+    if @current_user
+      @current_user.name
+    end
+    #code
   end
 
 end

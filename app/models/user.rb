@@ -14,6 +14,11 @@ class User < ActiveRecord::Base
   #relacja
   has_many :issue
 
+  def admin?
+    self.admin == true
+  end
+
+
   def password=(password)
     @password=password
     puts 'punkt 1' #sprawdzanie - przy wykonywaniu wyzuca na ekran

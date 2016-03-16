@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :check_if_admin
 
   # GET /users
   # GET /users.json
@@ -69,6 +70,10 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :admin)
+    end
+
+    def check_if_admin
+      redirect_to welcome_url, notice: 'You are not admin' unless @current_user.admin?
     end
 end

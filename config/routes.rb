@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     get 'about' => :about
     get 'start' => :start
     get 'index' => :start
+    get 'welcome' => :start
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
