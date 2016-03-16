@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
   attr_reader :password
   attr_accessor :password_confirmation
 
+  #relacja
+  has_many :issue
+
   def password=(password)
     @password=password
     puts 'punkt 1' #sprawdzanie - przy wykonywaniu wyzuca na ekran

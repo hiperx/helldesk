@@ -19,4 +19,22 @@ module ApplicationHelper
     end
   end
 
+  def parse_title(title,length)
+
+    if title.size > length
+      title[0..length] + '...'
+
+    else
+      title
+    end
+  end
+
+  def parse_user(user)
+    unless user.nil?
+      user.name
+    else
+      "Missing"
+    end
+  end
+
 end

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Issues</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Created</th>
+      <th>Created At</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @issues.each do |issue| %>
+      <tr>
+        <td style="padding:0 15px 0 15px;"><%= link_to parse_title(issue.title,12), issue %></td>
+        <td style="padding:0 15px 0 15px;"><%= parse_title(issue.description,30) %></td>
+        <td style="padding:0 15px 0 15px;"><%= parse_user(issue.user) %></td>
+        <td style="padding:0 15px 0 15px;"><%= issue.created_at %></td>
+
+        <td style="padding:0 3px 0 3px;"><%= link_to 'Edytuj', edit_issue_path(issue) %></td>
+        <td style="padding:0 3px 0 3px;"><%= link_to 'Kasuj', issue, method: :delete, data: { confirm: 'Czy jestes pewien?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nowy Issue', new_issue_path %>
