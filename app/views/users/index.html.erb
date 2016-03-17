@@ -16,7 +16,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
-        <td><%= user.email %></td>
+        <td><%= parse_title(user.email, 6) %></td>
         <td><%= user.admin? %></td>
         <td><%= link_to 'Pokaz', user %></td>
         <td><%= link_to 'Edytuj', edit_user_path(user) %></td>

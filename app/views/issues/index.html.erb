@@ -19,7 +19,7 @@
         <td style="padding:0 15px 0 15px;"><%= link_to parse_title(issue.title,12), issue %></td>
         <td style="padding:0 15px 0 15px;"><%= parse_title(issue.description,30) %></td>
         <td style="padding:0 15px 0 15px;"><%= parse_user(issue.user) %></td>
-        <td style="padding:0 15px 0 15px;"><%= issue.created_at %></td>
+        <td style="padding:0 15px 0 15px;"><%= parse_date(issue.created_at, '/', true) %></td>
 
         <td style="padding:0 3px 0 3px;"><%= link_to 'Edytuj', edit_issue_path(issue) %></td>
         <td style="padding:0 3px 0 3px;"><%= link_to 'Kasuj', issue, method: :delete, data: { confirm: 'Czy jestes pewien?' } %></td>

@@ -19,13 +19,24 @@ module ApplicationHelper
     end
   end
 
-  def parse_title(title,length)
+  def admin_home
+    unless @current_user.nil?
+        if @current_user.admin?
+          link_to 'Admin', :users
+        else
+          link_to 'Home', start_url
+        end
+    end
+  end
 
-    if title.size > length
+  def parse_title(title,length)
+    unless title.nil?
+      if title.size > length
       title[0..length] + '...'
 
-    else
-      title
+      else
+        title
+      end
     end
   end
 
@@ -43,5 +54,22 @@ module ApplicationHelper
     end
     #code
   end
+
+  def parse_date(date,sep='-',show_hm=false)
+    year=date.year.to_s
+    month=date.month.to_s
+    day=date.day.to_s
+    wday=Date::DAYNAMES[date.wday]
+
+
+    result = ' | ' + wday + ' ' + year + sep + month + sep + day + ' | '
+    if show_hm
+      result + ' ' + date.to_s[-12..-8]
+    else
+      result
+    end
+    #code
+  end
+
 
 end
