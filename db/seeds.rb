@@ -10,5 +10,5 @@ unless u.nil?
   u.delete
 end
 
-u = User.create ([ {name: 'admin'}, {password:'12345'},
-  {password_confirmation: '12345'}, {admin: true} ])
+u = User.create ([ name: 'admin', password:'12345',
+  password_confirmation: '12345', admin: true ])
