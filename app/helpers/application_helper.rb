@@ -29,6 +29,17 @@ module ApplicationHelper
     end
   end
 
+  
+
+  def notes_empty
+    unless @current_user.nil?
+        if @current_user.admin?
+          link_to 'Notes', notes_url
+        end
+    end
+  end
+
+
   def parse_title(title,length)
     unless title.nil?
       if title.size > length
@@ -46,6 +57,20 @@ module ApplicationHelper
     else
       "Missing"
     end
+  end
+
+  def parse_issue(issue)
+    unless issue.nil?
+      parse_title(issue.title,5)
+    else
+      'Missing'
+    end
+    #code
+  end
+
+  def parse_txt(txt, col = 80)
+  txt.gsub(/(.{1,#{col}})( +|$\n?)|(.{1,#{col}})/,
+    "\\1\\3\n")
   end
 
   def user_name

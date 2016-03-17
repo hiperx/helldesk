@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 u = User.find_by_name 'admin'
 unless u.nil?
-  u.delete
+  u.destroy
 end
 
-u = User.create ([ name: 'admin', password:'12345',
-  password_confirmation: '12345', admin: true ])
+u = User.create ([ name: 'admin', password:'admin',
+  password_confirmation: 'admin', admin: true ])

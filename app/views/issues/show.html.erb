@@ -12,3 +12,22 @@
 
 <%= link_to 'Edit', edit_issue_path(@issue) %> |
 <%= link_to 'Back', issues_path %>
+<hr>
+<h2>Lista Notatek :</h2>
+<table>
+
+  <tbody>
+    <% @issue.note.reverse_order.each do |n| %>
+
+    <tr>
+      <td><%= simple_format(parse_txt(n.body,120)) %></td>
+      <td style="vertical-align:top"><%= parse_date(n.created_at) %></td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>
+
+<br><hr>
+
+<%= link_to 'Create Note', new_note_path(:issue_id => @issue.id) %>

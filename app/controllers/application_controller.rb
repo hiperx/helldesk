@@ -18,4 +18,9 @@ class ApplicationController < ActionController::Base
       redirect_to login_url
     end
   end
+
+  def check_if_admin
+    redirect_to welcome_url, notice: 'You are not admin' unless @current_user.admin?
+  end
+
 end
