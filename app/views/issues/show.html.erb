@@ -10,6 +10,11 @@
   <%= @issue.description %>
 </p>
 
+<p>
+  <strong>Status :</strong>
+  <%= get_status(@issue.status) %>
+</p>
+
 <%= link_to 'Edit', edit_issue_path(@issue) %> |
 <%= link_to 'Back', issues_path %>
 <hr>

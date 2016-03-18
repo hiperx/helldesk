@@ -29,7 +29,7 @@ module ApplicationHelper
     end
   end
 
-  
+
 
   def notes_empty
     unless @current_user.nil?
@@ -56,6 +56,14 @@ module ApplicationHelper
       user.name
     else
       "Missing"
+    end
+  end
+
+  def parse_statsu(status)
+    unless status.nil?
+      status.name
+    else
+      "None"
     end
   end
 
