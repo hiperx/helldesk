@@ -13,7 +13,16 @@
 <%= link_to 'Edit', edit_issue_path(@issue) %> |
 <%= link_to 'Back', issues_path %>
 <hr>
+<% if false %>
+
+<%= link_to 'Create Note', new_note_path(:issue_id => @issue.id) %>
+
+<% end %>
+
+<%= button_to 'Create Note', new_note_path, :params => {:issue_id => @issue.id}, :method => :get %>
+<hr>
 <h2>Lista Notatek :</h2>
+
 <table>
 
   <tbody>
@@ -29,5 +38,3 @@
 </table>
 
 <br><hr>
-
-<%= link_to 'Create Note', new_note_path(:issue_id => @issue.id) %>
