@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @status.name %>
+</p>
+
+<p>
+  <strong>Closed:</strong>
+  <%= @status.closed %>
+</p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @status.priority %>
+</p>
+
+<%= link_to 'Edit', edit_status_path(@status) %> |
+<%= link_to 'Back', statuses_path %>

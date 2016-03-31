@@ -1,0 +1,70 @@
+// Place all the styles related to the Static_Content controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#page_content{
+  margin-top: 4em;
+  width: 80%;
+  margin-left: 10%;
+  background-color: lightgray;
+
+  #page_box {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+  }
+  
+  }
+
+#top_menu {
+  position: fixed;
+  top: 0;
+  width: 84%;
+  margin-left: 8%;
+  height:  3em;
+
+
+  background-color: green;
+  //border-radius: 15px;
+
+  background: #7d7e7d;
+  background: -moz-linear-gradient(top, #7d7e7d 0%, #0e0e0e 100%);
+  background: -webkit-linear-gradient(top, #7d7e7d 0%,#0e0e0e 100%);
+  background: linear-gradient(to bottom, #7d7e7d 0%,#0e0e0e 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 );
+
+-webkit-box-shadow: 7px 7px 7px 0px rgba(50, 69, 50, 0.44);
+-moz-box-shadow:    7px 7px 7px 0px rgba(50, 69, 50, 0.44);
+box-shadow:         7px 7px 7px 0px rgba(50, 69, 50, 0.44);
+
+  ul {
+     list-style: none;
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: white;
+      }
+
+    }
+
+  #left {
+          li {
+              float: left;
+                a{
+                  margin-right: 1em;
+                }
+             }
+        }
+
+  #right {
+
+            li {
+            float: right;
+              a{
+                margin-right: 1em;
+              }
+            }
+
+        }
+}

@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @issue.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @issue.description %>
+</p>
+
+<p>
+  <strong>Status :</strong>
+  <%= get_status(@issue.status) %>
+</p>
+
+<%= link_to 'Edit', edit_issue_path(@issue) %> |
+<%= link_to 'Back', issues_path %>
+<hr>
+<% if false %>
+
+<%= link_to 'Create Note', new_note_path(:issue_id => @issue.id) %>
+
+<% end %>
+
+<%= button_to 'Create Note', new_note_path, :params => {:issue_id => @issue.id}, :method => :get %>
+<hr>
+<h2>Lista Notatek :</h2>
+
+<table>
+
+  <tbody>
+    <% @issue.note.reverse_order.each do |n| %>
+
+    <tr>
+      <td><%= simple_format(parse_txt(n.body,120)) %></td>
+      <td style="vertical-align:top"><%= parse_date(n.created_at) %></td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>
+
+<br><hr>
